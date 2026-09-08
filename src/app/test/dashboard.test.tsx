@@ -10,9 +10,15 @@ describe("DashboardPage", () => {
       screen.getByText(/understand project risk before it becomes expensive/i)
     ).toBeInTheDocument();
 
-    expect(
-      screen.getByRole("link", { name: "New Analysis" })
-    ).toHaveAttribute("href", "/analyze");
+    const analysisLinks = screen.getAllByRole("link", {
+      name: "New Analysis",
+    });
+
+    expect(analysisLinks).toHaveLength(2);
+
+    analysisLinks.forEach((link) => {
+      expect(link).toHaveAttribute("href", "/analyze");
+    });
 
     expect(screen.getByText("Total Projects")).toBeInTheDocument();
     expect(screen.getByText("At Risk")).toBeInTheDocument();
