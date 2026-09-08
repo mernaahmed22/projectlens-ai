@@ -123,7 +123,7 @@ The latest verified result was:
 
 The tests cover dashboard rendering, analyze page behavior, risk report rendering, severity logic, API responses, and error handling for service unavailability, rate limits, and empty AI responses. API tests use mocked Gemini responses rather than making real AI requests.
 
-Coverage was measured using Vitest with the V8 coverage provider. The latest coverage run reported 94.23% statement and line coverage overall, with the risk report and severity utility at 100%. Coverage should be rerun after significant code changes.
+Coverage was measured using Vitest with the V8 coverage provider. The latest coverage run reported 94.27% statement and line coverage overall, with the risk report and severity utility at 100%. Coverage should be rerun after significant code changes.
 
 To generate coverage:
 
