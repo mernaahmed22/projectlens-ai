@@ -1,3 +1,4 @@
+
 export default function Home() {
   const demoProjects = [
     {
@@ -38,7 +39,6 @@ export default function Home() {
             >
               Dashboard
             </a>
-
             <a
               href="/analyze"
               className="block w-full rounded-lg px-4 py-3 text-left text-sm font-medium text-slate-600 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
@@ -48,23 +48,26 @@ export default function Home() {
           </nav>
         </aside>
 
-        <section className="flex-1 p-6 md:p-10">
+        <section className="min-w-0 flex-1 p-6 md:p-10">
           <div className="mx-auto max-w-6xl">
             <div className="mb-10">
               <p className="text-sm font-medium text-slate-600">
                 Project Intelligence
               </p>
-
               <h2 className="mt-2 text-3xl font-semibold tracking-tight md:text-4xl">
                 Understand project risk before it becomes expensive.
               </h2>
-
               <p className="mt-3 max-w-2xl text-base leading-7 text-slate-600">
                 Use AI-powered analysis to uncover risks, identify missing
                 information, and generate practical next steps.
               </p>
 
-              
+              <a
+                href="/analyze"
+                className="mt-5 inline-flex w-full items-center justify-center rounded-lg bg-slate-900 px-4 py-3 text-sm font-medium text-white transition hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2 lg:hidden"
+              >
+                New Analysis
+              </a>
             </div>
 
             <div className="grid gap-4 md:grid-cols-3">
@@ -113,8 +116,6 @@ export default function Home() {
                     risk. These are not saved AI analyses.
                   </p>
                 </div>
-
-                
               </div>
 
               <div className="space-y-4">
@@ -129,7 +130,6 @@ export default function Home() {
                         Example AI risk assessment
                       </p>
                     </div>
-
                     <div className="text-right">
                       <p className="font-semibold">
                         {project.score}/100
