@@ -2,6 +2,10 @@
 
 ProjectLens AI is an AI-powered project risk analysis application built with Next.js and TypeScript. It helps project managers, team leads, and business teams assess project health by identifying risks, missing information, recommended actions, and an overall risk score.
 
+## Project Brief
+
+ProjectLens AI helps project managers, team leads, and business teams identify project risks before they become costly delays or failures. Many teams manage project information across scattered documents and status updates, making it difficult to recognize emerging risks and prioritize the right actions. I chose this idea because I wanted to build a practical AI tool that transforms project details into a structured, actionable assessment rather than a generic chatbot. Users can enter information about timelines, resources, budgets, dependencies, and blockers, then receive a risk score, key concerns, missing information, and recommended mitigation actions to support more informed decision-making.
+
 ## Live Demo
 
 Deployed on Vercel:
@@ -10,28 +14,28 @@ https://projectlens-ai.vercel.app
 
 ## Features
 
-- AI-powered project risk analysis
-- Structured risk score from 0–100
-- Risk severity classification
-- Executive summary generation
-- Identification of key project risks
-- Detection of missing project information
-- Recommended mitigation actions
-- Suggested project priority
-- Responsive dashboard
-- Accessible UI
-- Error handling for AI service failures and rate limits
+* AI-powered project risk analysis
+* Structured risk score from 0–100
+* Risk severity classification
+* Executive summary generation
+* Identification of key project risks
+* Detection of missing project information
+* Recommended mitigation actions
+* Suggested project priority
+* Responsive dashboard
+* Accessible UI
+* Error handling for AI service failures and rate limits
 
 ## Tech Stack
 
-- Next.js 16
-- React
-- TypeScript
-- Tailwind CSS
-- Gemini API
-- Vitest
-- React Testing Library
-- Vercel
+* Next.js 16
+* React
+* TypeScript
+* Tailwind CSS
+* Gemini API
+* Vitest
+* React Testing Library
+* Vercel
 
 ## How It Works
 
@@ -47,10 +51,10 @@ ProjectLens AI uses the Gemini API to perform project analysis. The prompt instr
 
 The prompt defines four score ranges:
 
-- 0–29: Low Risk
-- 30–59: Medium Risk
-- 60–79: High Risk
-- 80–100: Critical Risk
+* 0–29: Low Risk
+* 30–59: Medium Risk
+* 60–79: High Risk
+* 80–100: Critical Risk
 
 Gemini is instructed to provide specific, actionable recommendations and not invent project facts that were not supplied.
 
@@ -114,18 +118,20 @@ npm run test:run
 
 The latest verified result was:
 
-- 5 test files passed
-- 17 tests passed
+* 5 test files passed
+* 17 tests passed
 
 The tests cover dashboard rendering, analyze page behavior, risk report rendering, severity logic, API responses, and error handling for service unavailability, rate limits, and empty AI responses. API tests use mocked Gemini responses rather than making real AI requests.
 
-Coverage was measured using Vitest with the V8 coverage provider. The previous coverage run reported 94.33% statement and line coverage overall, with the risk report and severity utility at 100%. Coverage should be rerun after significant code changes.
+Coverage was measured using Vitest with the V8 coverage provider. The latest coverage run reported 94.23% statement and line coverage overall, with the risk report and severity utility at 100%. Coverage should be rerun after significant code changes.
 
 To generate coverage:
 
 ```bash
 npx vitest run --coverage
 ```
+
+On Windows PowerShell, use `npx.cmd` if script execution is restricted.
 
 ## Production Build
 
@@ -141,28 +147,28 @@ The latest production build completed successfully with TypeScript checks and ge
 
 The application was reviewed using Lighthouse and manual accessibility checks.
 
-The latest verified production Lighthouse results for the Analyze page were:
+The latest verified production mobile Lighthouse results were:
 
-- Performance: 92
-- Accessibility: 100
-- Best Practices: 100
-- SEO: 100
+* Performance: 86
+* Accessibility: 100
+* Best Practices: 100
+* SEO: 100
 
-The dashboard accessibility score also reached 100 after contrast improvements.
+A previous Analyze page audit achieved a performance score of 92 and an accessibility score of 100. The dashboard accessibility score also reached 100 after contrast improvements.
 
 Accessibility checks included keyboard navigation, visible focus states, required-field validation, a basic screen-reader label check, mobile layout inspection, semantic headings, accessible navigation labels, and improved text contrast.
 
-These automated and manual checks provide evidence of accessibility improvements but do not constitute a formal WCAG certification.
+These automated and manual checks provide evidence of accessibility improvements but do not constitute a formal WCAG certification. A separate WAVE or axe audit report should be included with the submission if required by the reviewer.
 
 ## Error Handling
 
 The application handles common AI service failures, including:
 
-- Temporary service unavailability
-- API rate limits
-- Authentication failures
-- Empty AI responses
-- Network or connection failures
+* Temporary service unavailability
+* API rate limits
+* Authentication failures
+* Empty AI responses
+* Network or connection failures
 
 Users receive friendly error messages rather than raw provider errors. The form also provides loading feedback and a retry action.
 
@@ -188,27 +194,27 @@ The frontend collects project information and sends it to `/api/analyze`. The se
 
 ## Limitations
 
-- Analyses are not currently saved between sessions.
-- The dashboard uses sample data for demonstration purposes.
-- The application does not include authentication.
-- AI-generated results should support human decision-making rather than replace professional judgment.
-- Gemini output may vary between analyses.
-- The current implementation relies on the AI provider for the generated assessment and does not independently verify every project fact or recommendation.
+* Analyses are not currently saved between sessions.
+* The dashboard uses sample data for demonstration purposes.
+* The application does not include authentication.
+* AI-generated results should support human decision-making rather than replace professional judgment.
+* Gemini output may vary between analyses.
+* The current implementation relies on the AI provider for the generated assessment and does not independently verify every project fact or recommendation.
 
 ## Future Improvements
 
 Possible future improvements include:
 
-- Saving previous project analyses
-- User authentication
-- Team workspaces
-- Historical risk tracking
-- Project comparison
-- Exporting reports as PDF
-- Integration with project management tools
-- Real project portfolio dashboards
-- Stronger runtime validation of AI responses
-- Automated monitoring and alerting
+* Saving previous project analyses
+* User authentication
+* Team workspaces
+* Historical risk tracking
+* Project comparison
+* Exporting reports as PDF
+* Integration with project management tools
+* Real project portfolio dashboards
+* Stronger runtime validation of AI responses
+* Automated monitoring and alerting
 
 ## Deployment
 
@@ -222,22 +228,28 @@ The live test generated a structured report with an 85/100 Critical Risk score, 
 
 ### Before Deployment
 
-- [x] Run the automated test suite and confirm all tests pass.
-- [x] Run the production build successfully.
-- [x] Confirm TypeScript checks pass.
-- [x] Verify the Gemini environment variable is configured.
-- [x] Confirm `.env.local` is excluded from Git.
-- [x] Test the dashboard and analysis flow locally.
-- [x] Review responsive layout and accessibility.
+* [x] Run the automated test suite and confirm all tests pass.
+* [x] Run the production build successfully.
+* [x] Confirm TypeScript checks pass.
+* [x] Verify the Gemini environment variable is configured.
+* [x] Confirm `.env.local` is excluded from Git.
+* [x] Test the dashboard and analysis flow locally.
+* [x] Review responsive layout and accessibility.
 
 ### After Deployment
 
-- [x] Confirm Vercel reports a successful deployment.
-- [x] Open the live application.
-- [x] Test the New Analysis flow with fictional project data.
-- [x] Confirm Gemini returns a structured risk report.
-- [ ] Perform a final browser-console and Vercel-log review.
-- [ ] Recheck the live layout on desktop and mobile after the final documentation deployment.
+* [x] Confirm Vercel reports a successful deployment.
+* [x] Open the live application.
+* [x] Test the New Analysis flow with fictional project data.
+* [x] Confirm Gemini returns a structured risk report.
+* [ ] Perform a final browser-console and Vercel-log review.
+* [ ] Recheck the live layout on desktop and mobile after the final documentation deployment.
+
+### Sign-off
+
+Prepared by: Merna Basyouny
+
+Status: Production deployed and core functionality verified. Final console/log and responsive-layout checks remain pending.
 
 ## Rollback Plan
 
@@ -259,11 +271,11 @@ ProjectLens AI currently uses lightweight manual monitoring rather than a dedica
 
 Monitoring includes:
 
-- Checking Vercel deployment status
-- Reviewing runtime and server logs
-- Testing the live AI flow after production changes
-- Watching for Gemini rate-limit and service-unavailable errors
-- Confirming the API continues returning structured responses
+* Checking Vercel deployment status
+* Reviewing runtime and server logs
+* Testing the live AI flow after production changes
+* Watching for Gemini rate-limit and service-unavailable errors
+* Confirming the API continues returning structured responses
 
 Future production improvements could include automated uptime checks, error tracking, analytics, and alerting.
 
