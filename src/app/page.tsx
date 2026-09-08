@@ -114,9 +114,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
-                  Demo data
-                </span>
+                
               </div>
 
               <div className="space-y-4">

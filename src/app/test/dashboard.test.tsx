@@ -22,7 +22,7 @@ describe("DashboardPage", () => {
     expect(screen.getByText("CRM Migration")).toBeInTheDocument();
     expect(screen.getByText("Website Redesign")).toBeInTheDocument();
 
-    expect(screen.getByText("Demo data")).toBeInTheDocument();
+    expect(screen.queryByText("Demo data")).not.toBeInTheDocument();
 
     expect(
       screen.queryByRole("link", { name: "Start New Analysis" })
