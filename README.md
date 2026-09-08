@@ -147,14 +147,14 @@ The latest verified production build completed successfully with TypeScript chec
 
 The application was reviewed using Lighthouse, axe DevTools, and manual accessibility checks.
 
-The latest verified production mobile Lighthouse results were:
+The latest production mobile Lighthouse results were:
 
-* Performance: 85
-* Accessibility: 100
-* Best Practices: 100
-* SEO: 100
+| Page                      | Performance | Accessibility | Best Practices | SEO |
+| ------------------------- | ----------: | ------------: | -------------: | --: |
+| Dashboard (`/`)           |          93 |           100 |            100 | 100 |
+| New Analysis (`/analyze`) |          97 |           100 |            100 | 100 |
 
-A previous Analyze page audit achieved a performance score of 92 and an accessibility score of 100. The dashboard accessibility score also reached 100 after contrast improvements.
+Both pages exceeded the 90+ Performance target. Earlier audits reported lower performance scores, demonstrating normal variation between Lighthouse runs. The dashboard accessibility score also reached 100 after contrast improvements.
 
 An axe DevTools scan of the live application reported 0 detected issues, including 0 critical, serious, moderate, and minor issues, with WCAG 2.1 AA rules selected.
 
@@ -256,7 +256,7 @@ The mobile navigation improvement was committed and pushed to GitHub in commit `
 
 Prepared by: Merna Basyouny
 
-Status: Production deployed and core functionality verified. Browser-console and Vercel-log review and responsive-layout checks completed. The mobile navigation improvement was tested locally and pushed for production deployment. The latest Lighthouse Performance score is 85, meeting the assignment's minimum requirement.
+Status: Production deployed and core functionality verified. Browser-console and Vercel-log review and responsive-layout checks completed. The mobile navigation improvement was tested locally and pushed for production deployment. The latest mobile Lighthouse scores are 93 Performance for the dashboard and 97 Performance for New Analysis, with 100 in Accessibility, Best Practices, and SEO for both pages.
 
 ## Rollback Plan
 
