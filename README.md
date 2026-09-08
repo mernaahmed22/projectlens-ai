@@ -22,7 +22,7 @@ https://projectlens-ai.vercel.app
 * Detection of missing project information
 * Recommended mitigation actions
 * Suggested project priority
-* Responsive dashboard
+* Responsive dashboard with mobile access to New Analysis
 * Accessible UI
 * Error handling for AI service failures and rate limits
 
@@ -141,24 +141,28 @@ Run:
 npm run build
 ```
 
-The latest production build completed successfully with TypeScript checks and generated the dashboard, analysis page, and dynamic API route.
+The latest verified production build completed successfully with TypeScript checks and generated the dashboard, analysis page, and dynamic API route.
 
 ## Accessibility and Performance
 
-The application was reviewed using Lighthouse and manual accessibility checks.
+The application was reviewed using Lighthouse, axe DevTools, and manual accessibility checks.
 
 The latest verified production mobile Lighthouse results were:
 
-* Performance: 86
+* Performance: 85
 * Accessibility: 100
 * Best Practices: 100
 * SEO: 100
 
 A previous Analyze page audit achieved a performance score of 92 and an accessibility score of 100. The dashboard accessibility score also reached 100 after contrast improvements.
 
+An axe DevTools scan of the live application reported 0 detected issues, including 0 critical, serious, moderate, and minor issues, with WCAG 2.1 AA rules selected.
+
 Accessibility checks included keyboard navigation, visible focus states, required-field validation, a basic screen-reader label check, mobile layout inspection, semantic headings, accessible navigation labels, and improved text contrast.
 
-These automated and manual checks provide evidence of accessibility improvements but do not constitute a formal WCAG certification. A separate WAVE or axe audit report should be included with the submission if required by the reviewer.
+The dashboard includes a visible New Analysis button on mobile and tablet screen sizes, ensuring users can access the main AI workflow when the desktop sidebar is hidden. The responsive dashboard and analysis form were reviewed at a 375px viewport, with no visible clipping or horizontal overflow. The mobile navigation button was also tested locally and confirmed to open the analysis page.
+
+These automated and manual checks provide evidence of accessibility improvements but do not constitute a formal WCAG certification.
 
 ## Error Handling
 
@@ -224,6 +228,8 @@ The `GEMINI_API_KEY` environment variable is configured securely in Vercel. The 
 
 The live test generated a structured report with an 85/100 Critical Risk score, executive summary, key risks, missing information, and recommended actions.
 
+The mobile navigation improvement was committed and pushed to GitHub in commit `c060f87`, adding a visible New Analysis button for smaller screens.
+
 ## Deployment Checklist
 
 ### Before Deployment
@@ -242,14 +248,15 @@ The live test generated a structured report with an 85/100 Critical Risk score, 
 * [x] Open the live application.
 * [x] Test the New Analysis flow with fictional project data.
 * [x] Confirm Gemini returns a structured risk report.
-* [ ] Perform a final browser-console and Vercel-log review.
-* [ ] Recheck the live layout on desktop and mobile after the final documentation deployment.
+* [x] Perform a final browser-console and Vercel-log review.
+* [x] Recheck the live layout on desktop and mobile.
+* [x] Verify that the mobile New Analysis button opens the analysis page locally.
 
 ### Sign-off
 
 Prepared by: Merna Basyouny
 
-Status: Production deployed and core functionality verified. Final console/log and responsive-layout checks remain pending.
+Status: Production deployed and core functionality verified. Browser-console and Vercel-log review and responsive-layout checks completed. The mobile navigation improvement was tested locally and pushed for production deployment. The latest Lighthouse Performance score is 85, meeting the assignment's minimum requirement.
 
 ## Rollback Plan
 
